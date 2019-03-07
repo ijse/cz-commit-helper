@@ -56,16 +56,13 @@ module.exports = function (options) {
           type: 'input',
           name: 'scope',
           message: '影响范围描述：\n',
-          validate: function (answers) {
-            return !!answers.scope
-          },
           default: options.defaultScope
         }, {
           type: 'input',
           name: 'subject',
-          message: '简要描述此次提交的内容：\n',
+          message: '简要描述此次提交的内容（必填）：\n',
           validate: function (answers) {
-            return !!answers.subject
+            return !!answers
           },
           default: options.defaultSubject
         }, {
@@ -88,14 +85,17 @@ module.exports = function (options) {
         }, {
           type: 'confirm',
           name: 'isIssueAffected',
-          message: '是否修复了Jira问题？',
+          message: '是否有关联Issue？',
           default: options.defaultIssues ? true : false
         }, {
           type: 'input',
           name: 'issues',
-          message: '修复的问题: (e.g. "fix #123", "resolves #123".):\n',
+          message: '修复的Issue: (e.g. "fix #123", "resolves #123".):\n',
           when: function(answers) {
             return answers.isIssueAffected;
+          },
+          validate: function (answers) {
+            return !!answers
           },
           default: options.defaultIssues ? options.defaultIssues : undefined
         }
