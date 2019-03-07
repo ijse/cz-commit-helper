@@ -9,7 +9,7 @@
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "homepage": "https://github.com/commitizen/cz-conventional-changelog",
-  "author": "Li Yi<liyi@itiger.com>",
+  "author": "Li Yi <liyi@itiger.com>",
   "license": "MIT",
   "dependencies": {
     "lodash.map": "^4.5.1",

@@ -1,5 +1,3 @@
-"format cjs";
-
 var wrap = require('word-wrap');
 var map = require('lodash.map');
 var longest = require('longest');
