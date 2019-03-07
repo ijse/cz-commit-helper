@@ -1,5 +1,5 @@
 {
-  "name": "cz-commit-helper",
+  "name": "@tigerbrokers/cz-commit-helper",
   "version": "0.1.0",
   "description": "Commitizen adapter following the conventional-changelog format.",
   "main": "index.js",
