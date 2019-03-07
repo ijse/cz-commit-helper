@@ -56,11 +56,17 @@ module.exports = function (options) {
           type: 'input',
           name: 'scope',
           message: '影响范围描述：\n',
+          validate: function (answers) {
+            return !!answers.scope
+          },
           default: options.defaultScope
         }, {
           type: 'input',
           name: 'subject',
           message: '简要描述此次提交的内容：\n',
+          validate: function (answers) {
+            return !!answers.subject
+          },
           default: options.defaultSubject
         }, {
           type: 'input',
@@ -87,7 +93,7 @@ module.exports = function (options) {
         }, {
           type: 'input',
           name: 'issues',
-          message: '输入Jira问题id: (e.g. "fix #123", "resolves #123".):\n',
+          message: '修复的问题: (e.g. "fix #123", "resolves #123".):\n',
           when: function(answers) {
             return answers.isIssueAffected;
           },
